@@ -5,6 +5,7 @@ import { Button } from "@headlessui/react";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import config from "../../next.config.mjs"
 
 interface GeneratePasswordProps {
   upperCaseEnabled: boolean;
@@ -26,6 +27,8 @@ export default function GeneratePassword({
 }: GeneratePasswordProps) {
   const [password, setPassword] = useState("");
   const [isRotating, setIsRotating] = useState(false);
+
+  const basePath = config.basePath;
 
   const copyPasswordToClipboard = () => {
     navigator.clipboard
@@ -73,7 +76,7 @@ export default function GeneratePassword({
         >
           <span className="sr-only">Re-generate Password</span>
           <Image
-            src="/refresh.svg"
+            src={`${basePath}/refresh.svg`}
             alt=""
             width={24}
             height={24}
