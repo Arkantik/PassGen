@@ -27,7 +27,7 @@ export default function Slider({ setPasswordLength }: SliderProps) {
         id="passwordLength"
         type="range"
         min={8}
-        max={48}
+        max={32}
         step={1}
         value={inputValue}
         onChange={handleInputChange}
