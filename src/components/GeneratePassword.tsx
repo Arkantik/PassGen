@@ -1,9 +1,8 @@
 "use strict";
-
+import { useEffect, useState } from "react";
 import { ToastConfig } from "@/config/ToastConfig";
 import { Button } from "@headlessui/react";
-import { useEffect, useState } from "react";
-import { GeneratePasswordProps } from "@/types/password";
+import { GeneratePasswordProps } from "@/types";
 import { toast } from "react-toastify";
 import Image from "next/image";
 import config from "../../next.config.mjs";

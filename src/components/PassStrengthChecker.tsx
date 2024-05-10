@@ -1,4 +1,4 @@
-import { GeneratePasswordProps } from "@/types/password";
+import { GeneratePasswordProps } from "@/types";
 
 export default function PassStrengthChecker({
   upperCaseEnabled,

@@ -1,10 +1,6 @@
 "use client";
-
 import { useState } from "react";
-
-interface SliderProps {
-  setPasswordLength: (passwordLength: number) => void;
-}
+import { SliderProps } from "@/types";
 
 export default function Slider({ setPasswordLength }: SliderProps) {
   const [inputValue, setInputValue] = useState(12);

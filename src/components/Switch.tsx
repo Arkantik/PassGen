@@ -1,10 +1,5 @@
+import { SwitchProps } from "@/types";
 import { Switch } from "@headlessui/react";
-
-interface SwitchProps {
-  enabled: boolean;
-  setEnabled: (enabled: boolean) => void;
-  switchName: string;
-}
 
 export default function SwitchComponent({
   switchName,

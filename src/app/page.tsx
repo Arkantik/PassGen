@@ -1,8 +1,7 @@
 "use client";
-
+import { useState } from "react";
 import SwitchComponent from "@/components/Switch";
 import GeneratePassword from "@/components/GeneratePassword";
-import { useState } from "react";
 import Slider from "@/components/Slider";
 
 export default function Home() {
