@@ -2,17 +2,12 @@
 
 import { ToastConfig } from "@/config/ToastConfig";
 import { Button } from "@headlessui/react";
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { GeneratePasswordProps } from "@/types/password";
 import { toast } from "react-toastify";
+import Image from "next/image";
 import config from "../../next.config.mjs"
-
-interface GeneratePasswordProps {
-  upperCaseEnabled: boolean;
-  numbersEnabled: boolean;
-  symbolsEnabled: boolean;
-  passwordLength: number;
-}
+import PassStrengthChecker from "./PassStrengthChecker";
 
 const uppercaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const lowercaseChar = "abcdefghijklmnopqrstuvwxyz";
@@ -66,8 +61,8 @@ export default function GeneratePassword({
 
   return (
     <div className="flex flex-col md:flex-row gap-4 text-sm md:text-lg w-full">
-      <span className="rounded-lg flex gap-6 py-2 px-4 min-w-52 w-full justify-between items-center border border-zinc-800 bg-gradient-to-b backdrop-blur-2xl bg-zinc-800/20">
-        <span className="w-full truncate" title={password}>
+      <span className="rounded-lg flex gap-3 py-2 px-4 min-w-52 w-full h-12 justify-between items-center border border-zinc-800 bg-gradient-to-b backdrop-blur-2xl bg-zinc-800/20">
+        <span className="w-full max-[360px]:max-w-48 min-[361px]:max-w-full truncate" title={password}>
           {password}
         </span>
         <Button
@@ -80,17 +75,29 @@ export default function GeneratePassword({
             alt=""
             width={24}
             height={24}
-            className={`block w-5 h-5 ${isRotating && "transform duration-100 -rotate-180"}`}
+            className={`block ${isRotating && "transform duration-100 -rotate-180"}`}
           />
         </Button>
+        <PassStrengthChecker upperCaseEnabled={upperCaseEnabled}
+          numbersEnabled={numbersEnabled}
+          symbolsEnabled={symbolsEnabled}
+          passwordLength={passwordLength}
+          className="hidden md:flex rounded w-32" />
       </span>
-      <Button
-        className="min-w-52 md:min-w-fit rounded-lg bg-blue-600 py-2 px-4 text-white hover:bg-sky-500"
-        onClick={copyPasswordToClipboard}
-        aria-label="copy password button"
-      >
-        Copy
-      </Button>
+      <div className="flex gap-2">
+        <PassStrengthChecker upperCaseEnabled={upperCaseEnabled}
+          numbersEnabled={numbersEnabled}
+          symbolsEnabled={symbolsEnabled}
+          passwordLength={passwordLength}
+          className="flex md:hidden rounded-lg max-w-28 w-full" />
+        <Button
+          className="min-w-fit w-full rounded-lg bg-blue-600 py-2 px-4 text-white hover:bg-sky-500"
+          onClick={copyPasswordToClipboard}
+          aria-label="copy password button"
+        >
+          Copy
+        </Button>
+      </div>
     </div>
   );
 }
