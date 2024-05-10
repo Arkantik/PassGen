@@ -1,0 +1,35 @@
+{
+  "name": "passgen",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint \"**/*.{js,mjs,ts,tsx}\" --cache --cache-strategy=content --cache-location=.eslintjscache",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "prettier \"**/*.{js,ts,tsx,json,yml,css}\" --check --cache --cache-strategy=content --cache-location=.prettiercache",
+    "prettier:fix": "npm run prettier -- --write",
+    "clean": "npm run prettier:fix && npm run lint:fix"
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.0.3",
+    "next": "14.2.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-toastify": "^10.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "eslint-config-prettier": "^9.1.0",
+    "postcss": "^8",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
