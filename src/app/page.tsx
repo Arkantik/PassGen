@@ -12,7 +12,7 @@ export default function Home() {
   const [passwordLength, setPasswordLength] = useState(12);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-12 overflow-hidden">
+    <main className="flex min-h-screen flex-col items-center justify-center p-4 md:p-12 overflow-hidden min-w-fit">
       <div className="flex flex-col gap-2 mb-12 relative justify-center items-center">
         <h1 className="text-6xl md:text-8xl font-bold text-center">PassGen</h1>
         <p className="text-center text-zinc-300 text md:text-xl">
