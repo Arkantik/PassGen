@@ -3,6 +3,12 @@ node_modules
 npm-debug.log
 .npm
 
-# Next.js Build Output
-.next
-build
+# next.js
+/.next/
+/out/
+/dist/
+
+# production
+/build
+
+.github
