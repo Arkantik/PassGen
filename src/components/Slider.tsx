@@ -19,7 +19,7 @@ export default function Slider({ setPasswordLength }: SliderProps) {
     <div className="flex gap-2 md:gap-6 max-w-2xl w-full flex-wrap md:flex-nowrap">
       <label
         htmlFor="passwordLength"
-        className="flex gap-2 items-center whitespace-nowrap min-w-38"
+        className="flex gap-2 items-center whitespace-nowrap w-48"
       >
         Password length: <span className="font-semibold">{inputValue}</span>
       </label>
@@ -27,11 +27,11 @@ export default function Slider({ setPasswordLength }: SliderProps) {
         id="passwordLength"
         type="range"
         min={8}
-        max={48}
+        max={32}
         step={1}
         value={inputValue}
         onChange={handleInputChange}
-        className="w-full bg-zinc-700 min-w-48"
+        className="w-full min-w-48"
       />
     </div>
   );
