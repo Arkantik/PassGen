@@ -7,8 +7,8 @@ import "./globals.css";
 const font = Poppins({ style: "normal", weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "PassGen - Your Password Generator",
-  description: "Generate strong and random passwords with a click of a button"
+  title: "PassGen - Generate Strong, Random, and Secure Passwords",
+  description: "PassGen is your go-to password generator tool that creates strong, random, and secure passwords with just a click. Enhance your online security effortlessly!"
 };
 
 export default function RootLayout({
