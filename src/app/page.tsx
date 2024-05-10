@@ -71,7 +71,7 @@ export default function Home() {
           />
         </ol>
       </div>
-      <div className="fixed bottom-0 flex justify-end items-center w-full pr-12 pb-4">
+      <div className="fixed bottom-0 flex justify-center md:justify-end items-center w-full md:px-12 pb-4">
         <span className="flex gap-2 text-sm">
           Made by Jérémy Dohin
           <span>|</span>
