@@ -31,7 +31,7 @@ export default function Slider({ setPasswordLength }: SliderProps) {
         step={1}
         value={inputValue}
         onChange={handleInputChange}
-        className="w-full bg-zinc-700 min-w-48"
+        className="w-full min-w-48"
       />
     </div>
   );
